@@ -1,11 +1,8 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { getPostBySlug } from 'lib/posts';
 
 export default function PostRedirect({ post }) {
-  const router = useRouter();
-
   useEffect(() => {
     // Redirect to the WordPress domain URL with a 301 (permanent) status code
     window.location.replace(`https://yourwordpressdomain.com/${post.slug}`, { status: 301 });
